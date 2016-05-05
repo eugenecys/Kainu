@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(SixenseHand))]
 
@@ -14,12 +15,15 @@ public class HandController : MonoBehaviour {
     public Side side;
 
     private SixenseHand sxHand;
+    private List<EventManager.GameEvent> pEvents;
 
     #region UnityDefaults
 
     void Awake ()
     {
         sxHand = GetComponent<SixenseHand>();
+        pEvents = new List<EventManager.GameEvent>();
+        initObjectInteractions();
     }
 
 	// Use this for initialization
@@ -29,12 +33,27 @@ public class HandController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
-	}
+        foreach(EventManager.GameEvent pEvent in pEvents)
+        {
+            pEvent(); 
+        }
+
+    }
 
     #endregion
 
-    #region Kainu_Interactions
+    #region Object_Interactions
+    
+
+    void initObjectInteractions()
+    {
+        pEvents.Add(pollPos);
+    }
+
+    void pollPos()
+    {
+
+    }
 
     void grab()
     {
@@ -45,6 +64,8 @@ public class HandController : MonoBehaviour {
     {
 
     }
+
+
 
     #endregion
 }
