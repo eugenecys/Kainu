@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿
+//
+// Copyright (C) 2016 Eugene Chiong
+// All Rights Reserved
+//
+// Self Balancing Binary Tree
+// Version 1.0.11
+//
+
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;

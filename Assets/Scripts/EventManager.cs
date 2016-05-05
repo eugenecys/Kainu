@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿
+//
+// Copyright (C) 2016 Eugene Chiong
+// All Rights Reserved
+//
+// Unity Event Manager
+// Version 0.9.2
+//
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
