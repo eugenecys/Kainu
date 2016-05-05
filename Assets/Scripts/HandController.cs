@@ -50,20 +50,26 @@ public class HandController : MonoBehaviour
 
     public Interactable activeObject;
     public bool grabbing;
+    private float triggerLevel;
 
     void initObjectInteractions()
     {
-        pEvents.Add(pollPos);
+        pEvents.Add(pollControllerState);
     }
 
-    void pollPos()
+    void pollControllerState()
     {
-
+        triggerLevel = sxHand.m_controller.Trigger;
     }
 
     void grab()
     {
 
+    }
+
+    void shake()
+    {
+        
     }
 
     void throwObject(Fetchable fObj, Vector3 vect)
@@ -154,9 +160,8 @@ public class HandController : MonoBehaviour
                 {
                     maxDp3Mag = dp3Max;
                 }
-                
-                //TODO: Add in object to activate shake
 
+                shake();
 
                 maxDp2Mag = 0;
                 maxDp3Mag = 0;
