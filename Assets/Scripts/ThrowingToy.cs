@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 
-public class ThrowingToy : MonoBehaviour, Fetchable, Throwable {
+public class ThrowingToy : MonoBehaviour, Fetchable, Interactable {
 
     Rigidbody rb;
 
@@ -30,7 +30,7 @@ public class ThrowingToy : MonoBehaviour, Fetchable, Throwable {
 
     #region Throwing_Mechanics
 
-    public void setThrow(Vector3 vect)
+    public void setVelocity(Vector3 vect)
     {
         rb.velocity = vect;
     }
