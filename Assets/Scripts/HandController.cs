@@ -171,6 +171,7 @@ public class HandController : MonoBehaviour
         Vector3 total = Vector3.zero;
         for (int i = 0; i < dpBuffer.Length; i++)
         {
+            //Change to Gaussian function as per previous code from Lightscape
             total = total + dpBuffer[i];
         }
         return total / Time.deltaTime / bufferSize;
